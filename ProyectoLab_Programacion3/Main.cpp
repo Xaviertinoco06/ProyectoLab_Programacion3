@@ -1,5 +1,4 @@
 #include <iostream>
-
 #include "Menu.h"
 #include "Npc.h"
 #include "MessageBox.h"
@@ -7,6 +6,7 @@
 #include "Movie.h"
 #include "Trivia.h"
 #include "PathFinder.h"
+
 int ScreenWidht = 1024;
 int ScreenHeight = 768;
 int frames = 0;
@@ -14,13 +14,13 @@ int x = -1, y = -1;
 Player* ColisionObj;
 
 void ChangeMusic(ALLEGRO_SAMPLE_INSTANCE* Instance, ALLEGRO_SAMPLE_INSTANCE *stop, bool* playing);
+
 enum Mapas {
     LOBBY = 1, UNITEC = 2, CASA = 3, LABORATORY = 4, MOVIE = 5, VALLE = 6, TRIVIA = 7, SALON = 8, FINDER = 9
 };
 
 void MapLoad() {
 }
-
 
 struct fader {
     int time;
@@ -237,7 +237,6 @@ int main(){
     fader faderSys(faderIMG,15,3);
   
     bool press = false;
-    bool ifpress = false;
 
     while (running) {
         al_flip_display();
