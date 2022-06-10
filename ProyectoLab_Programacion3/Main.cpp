@@ -103,6 +103,7 @@ void cameraUpdate(float * CameraPosition,float x,float y,int width,int height) {
 int main(){   
     //Punteros
     al_init();
+    
     float CameraPosition [2] = {0,0};
     bool running = true;
     
@@ -186,7 +187,7 @@ int main(){
     Npc NewPokemon(pokemon1,200,300,64,64,&Steve);
     
     //Trivia
-    Trivia JuegoTrivia(display);
+    Trivia JuegoTrivia(display, &Steve);
 
     //MessageBoxZ mensaje(NULL, "HOLAAAAAAA", ScreenWidht / 2, ScreenHeight / 2);
     //0,0, 346, 250, 1360, 400, 346 * 4, 250* 4, 0
@@ -239,6 +240,8 @@ int main(){
 
     while (running) {
         al_flip_display();
+        int vidas = ColisionObj->getVida();
+        ALLEGRO_BITMAP** hearts = new ALLEGRO_BITMAP * [vidas];
         ALLEGRO_KEYBOARD_STATE KeyState;
         ALLEGRO_EVENT event;
         al_get_keyboard_state(&KeyState);
@@ -395,6 +398,10 @@ int main(){
                 }
                 if (press == true) {
                     al_draw_bitmap_region(PokeDex, 0, 0, 1024, 768, (Steve.getX()-486), (Steve.getY()-384), 0);
+                    for (int i = 0; i < vidas; i++) {
+                        hearts[i] = al_load_bitmap("imagenes/pixelheart.png");
+                        al_draw_bitmap(hearts[i], ((Steve.getX()+200) + (i * 35)), (Steve.getY()-40), 0);
+                    }
                 }
             }
             std::cout << Steve.getX() << " --" << Steve.getY() << std::endl;

@@ -102,7 +102,7 @@ Player::Player(ALLEGRO_BITMAP* _Sprite) {
     speed = 3;
     x = 0;
     y = 0;
-
+    vida = 8;
     al_init_font_addon();
     al_init_ttf_addon();
     al_install_keyboard();

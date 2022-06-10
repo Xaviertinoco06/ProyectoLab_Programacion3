@@ -12,7 +12,7 @@ class Player{
 private:
 	int x, y;
 	ALLEGRO_BITMAP* Sprite;
-	int vida;
+	int vida = 0;
 	int width ;
 	int height;
 	int dirX, dirY;

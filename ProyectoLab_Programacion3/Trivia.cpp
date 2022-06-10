@@ -1,11 +1,6 @@
 #include "Trivia.h"
-#include "Player.h"
 
-Player Steve;
-const int vidas = Steve.getVida();
-int life = vidas;
-
-Trivia::Trivia(ALLEGRO_DISPLAY* display){
+Trivia::Trivia(ALLEGRO_DISPLAY* display, Player* _Steve){
 	ventana = display;
 	int ancho_W = GetSystemMetrics(SM_CXSCREEN);
 	int alto_W = GetSystemMetrics(SM_CYSCREEN);
@@ -18,9 +13,11 @@ Trivia::Trivia(ALLEGRO_DISPLAY* display){
 	al_register_event_source(event_queue, al_get_timer_event_source(segundoTimer));
 	al_register_event_source(event_queue, al_get_mouse_event_source());
 	al_start_timer(fps);
+	Steve = _Steve;
 }
 
 int Trivia::politica(){
+	life = Steve->getVida();
 	ALLEGRO_BITMAP* Fondo = al_load_bitmap("imagenes/politica.png");
 	ALLEGRO_BITMAP** hearts = new ALLEGRO_BITMAP * [life];
 	ALLEGRO_BITMAP* win = al_load_bitmap("imagenes/victoria.png");
@@ -117,14 +114,16 @@ int Trivia::politica(){
 			else {
 				if (life > 0) {
 					al_draw_bitmap(win, 0, 0, 0);
-					Steve.setVida(life);
+					Steve->setVida(life);
+					cout << Steve->getVida();
 					return 0;
 				}
 			}
 		}
 		else {
 			al_draw_bitmap(lost, 0, 0, 0);
-			Steve.setVida(life);
+			Steve->setVida(life);
+			cout << Steve->getVida();
 			return 0;
 		}
 
@@ -202,6 +201,7 @@ void Trivia::reset(){
 }
 
 int Trivia::historia() {
+	life = Steve->getVida();
 	font = al_load_ttf_font("fuente/pokefuente.ttf", 40, ALLEGRO_ALIGN_CENTRE);
 	ALLEGRO_BITMAP* hist = al_load_bitmap("imagenes/historia.png");
 	ALLEGRO_BITMAP* ans = al_load_bitmap("imagenes/hist.png");
@@ -377,14 +377,16 @@ int Trivia::historia() {
 			else {
 				if (life > 0) {
 					al_draw_bitmap(win, 0, 0, 0);
-					Steve.setVida(life);
+					Steve->setVida(life);
+					cout << Steve->getVida();
 					return 0;
 				}
 			}
 		}
 		else {
 			al_draw_bitmap(lost, 0, 0, 0);
-			Steve.setVida(life);
+			Steve->setVida(life);
+			cout << Steve->getVida();
 			return 0;
 		}
 
@@ -393,6 +395,7 @@ int Trivia::historia() {
 }
 
 int Trivia::ciencia() {
+	life = Steve->getVida();
 	ALLEGRO_BITMAP* oak = al_load_bitmap("imagenes/Oak.png");
 	ALLEGRO_BITMAP* Fondo = al_load_bitmap("imagenes/ciencia.png");
 	ALLEGRO_BITMAP* pokeball = al_load_bitmap("imagenes/pokeball.png");
@@ -497,14 +500,16 @@ int Trivia::ciencia() {
 			else {
 				if (life > 0) {
 					al_draw_bitmap(win, 0, 0, 0);
-					Steve.setVida(life);
+					Steve->setVida(life);
+					cout << Steve->getVida();
 					return 0;
 				}
 			}
 		}
 		else {
 			al_draw_bitmap(lost, 0, 0, 0);
-			Steve.setVida(life);
+			Steve->setVida(life);
+			cout << Steve->getVida();
 			return 0;
 		}
 
@@ -704,6 +709,7 @@ int Trivia::Ruleta(){
 }
 
 int Trivia::arte() {
+	life = Steve->getVida();
 	font = al_load_ttf_font("fuente/pokefuente.ttf", 40, ALLEGRO_ALIGN_CENTRE);
 	ALLEGRO_BITMAP* gal = al_load_bitmap("imagenes/arte.png");
 	al_draw_bitmap(gal, 0, 0, 0);
@@ -859,14 +865,16 @@ int Trivia::arte() {
 			else {
 				if (life > 0) {
 					al_draw_bitmap(win, 0, 0, 0);
-					Steve.setVida(life);
+					Steve->setVida(life);
+					cout << Steve->getVida();
 					return 0;
 				}
 			}
 		}
 		else {
 			al_draw_bitmap(lost, 0, 0, 0);
-			Steve.setVida(life);
+			Steve->setVida(life);
+			cout << Steve->getVida();
 			return 0;
 		}
 		al_flip_display();
