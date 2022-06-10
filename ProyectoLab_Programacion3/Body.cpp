@@ -1,9 +1,7 @@
 #include "Body.h"
 #include <iostream>;
-//updates
-Body::Body()
-{
 
+Body::Body(){
 	x = 0;
 	y = 0;
 	Rx = 0;
@@ -13,12 +11,9 @@ Body::Body()
 	ColisionObj = NULL;
 	width = 0;
 	height = 0;
-
-
 }
 
 Body::Body(ALLEGRO_BITMAP* _Sprite, Player *_ColisionObj, int _width, int _height, int _x, int _y, int _speed, int _rx, int _ry) {
-
 	reg = true;
 	Sprite = _Sprite;
 	ColisionObj = _ColisionObj;
@@ -29,12 +24,9 @@ Body::Body(ALLEGRO_BITMAP* _Sprite, Player *_ColisionObj, int _width, int _heigh
 	speed = _speed;
 	Rx = _rx;
 	Ry = _ry;
-
 }
 
-Body::Body(ALLEGRO_BITMAP*_Sprite, Player *_ColisionObj, int _width, int _height, int _x, int _y, int _speed)
-{
-
+Body::Body(ALLEGRO_BITMAP*_Sprite, Player *_ColisionObj, int _width, int _height, int _x, int _y, int _speed){
 	Sprite = _Sprite;
 	ColisionObj = _ColisionObj;
 	width = _width;
@@ -43,54 +35,26 @@ Body::Body(ALLEGRO_BITMAP*_Sprite, Player *_ColisionObj, int _width, int _height
 	y = _y;
 	speed = _speed;
 	reg = 0;
-
-
-
-
-
-
 }
 
-
-
-Body::Body(ALLEGRO_BITMAP*sprite, Player *_ColisionObj, int _x, int _y)
-
-{
-
-
+Body::Body(ALLEGRO_BITMAP*sprite, Player *_ColisionObj, int _x, int _y){
 	speed = 1;
 	width = al_get_bitmap_width(sprite);
 	height = al_get_bitmap_height(Sprite);
 	x = _x;
 	y = _y;
 	ColisionObj = _ColisionObj;
-
-
-
-
-
-
 }
 
-bool Body::collision(float x, float y, float ex, float ey, int width, int height)
-{
+bool Body::collision(float x, float y, float ex, float ey, int width, int height){
 	    if (x + width<ex || x>ex + width || y > ey + height || y + height < ey) {
-
-
 			return false;
-
-
 		}
 		else {
-
 			Body::Colision();
 			//Colisiones de body
-
 			return true;
-		
 		}
-
-	
 }
 
 

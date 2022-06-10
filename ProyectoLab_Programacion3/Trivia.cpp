@@ -1,31 +1,18 @@
 #include "Trivia.h"
 
-Trivia::Trivia(ALLEGRO_DISPLAY* display)
-{
-
-
-
-
+Trivia::Trivia(ALLEGRO_DISPLAY* display){
 	ventana = display;
-
 	int ancho_W = GetSystemMetrics(SM_CXSCREEN);
 	int alto_W = GetSystemMetrics(SM_CYSCREEN);
-
 	al_set_window_title(ventana, "Trivia");
 	al_set_window_position(ventana, ancho_W / 2 - ancho / 2, alto_W / 2 - alto / 2);
-
 	segundoTimer = al_create_timer(1.0);
 	fps = al_create_timer(1.0 / 60);
 	event_queue = al_create_event_queue();
-
-	
 	al_register_event_source(event_queue, al_get_timer_event_source(fps));
 	al_register_event_source(event_queue, al_get_timer_event_source(segundoTimer));
 	al_register_event_source(event_queue, al_get_mouse_event_source());
 	al_start_timer(fps);
-
-
-
 }
 
 int Trivia::politica() {
@@ -200,18 +187,12 @@ int Trivia::politica() {
 	}
 }
 
-void Trivia::reset()
-{
+void Trivia::reset(){
 	 xr = 0, yr = 0, spins = 0, tipoS = 0;
 	 spinning = false, running = true;
 	 aux = 1;
 	 vidas = 5;
 	 resp = 0, xp = 0, mousex = 0, mousey = 0, vidas = 5, segundos = 0;
-	
-
-	
-
-
 }
 
 int Trivia::historia() {
@@ -402,6 +383,7 @@ int Trivia::historia() {
 		al_flip_display();
 	}
 }
+
 int Trivia::ciencia() {
 	ALLEGRO_BITMAP* oak = al_load_bitmap("imagenes/Oak.png");
 	ALLEGRO_BITMAP* Fondo = al_load_bitmap("imagenes/ciencia.png");
@@ -583,7 +565,6 @@ int Trivia::ciencia() {
 	}
 }
 
-
 int Trivia::Ruleta()
 {
 	al_start_timer(segundoTimer);
@@ -713,6 +694,7 @@ int Trivia::Ruleta()
 	}
 
 }
+
 int Trivia::arte() {
 	font = al_load_ttf_font("fuente/pokefuente.ttf", 40, ALLEGRO_ALIGN_CENTRE);
 	ALLEGRO_BITMAP* gal = al_load_bitmap("imagenes/arte.png");
@@ -882,6 +864,7 @@ int Trivia::arte() {
 
 
 }
+
 void Trivia::dibujaroak(ALLEGRO_BITMAP* _sprite, int _x) {
 	al_draw_bitmap_region(_sprite, 110 * _x, 256 * 0, 110, 256, 811, 297, 0);
 }

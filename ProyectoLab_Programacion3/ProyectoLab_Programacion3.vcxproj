@@ -165,7 +165,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Battle.cpp" />
     <ClCompile Include="Body.cpp" />
     <ClCompile Include="Boton.cpp" />
     <ClCompile Include="collider.cpp" />
