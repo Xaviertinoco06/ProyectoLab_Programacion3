@@ -137,6 +137,7 @@ int main(){
     ALLEGRO_BITMAP* PokeDex = al_load_bitmap("Pokemon/Pokedex.png");
     ALLEGRO_BITMAP* Violador = al_load_bitmap("Pokemon/97.png");
     ALLEGRO_BITMAP* pokemon1 = al_load_bitmap("Pokemon/Bulba.png");
+    ALLEGRO_BITMAP* medallas[3];
 	
     ALLEGRO_TRANSFORM camera;
     ALLEGRO_SAMPLE* Gym = al_load_sample("sonidos/Gym.mp3");
@@ -397,10 +398,25 @@ int main(){
                     cameraUpdate(CameraPosition, Steve.getX(), Steve.getY(), Steve.getWidth(), Steve.getHeight());
                 }
                 if (press == true) {
+                    medallas[0] = al_load_bitmap("imagenes/medalSun.png");
+                    medallas[1] = al_load_bitmap("imagenes/battleMedal.png");
+                    medallas[2] = al_load_bitmap("imagenes/filoMedal.png");
                     al_draw_bitmap_region(PokeDex, 0, 0, 1024, 768, (Steve.getX()-486), (Steve.getY()-384), 0);
                     for (int i = 0; i < vidas; i++) {
                         hearts[i] = al_load_bitmap("imagenes/pixelheart.png");
                         al_draw_bitmap(hearts[i], ((Steve.getX()+200) + (i * 35)), (Steve.getY()-40), 0);
+                    }
+                    if (Steve.getMedal() == 1) {
+                        al_draw_bitmap(medallas[0], ((Steve.getX() + 55) + (0 * 80)), (Steve.getY() + 95), 0);
+                    }
+                    else if (Steve.getMedal() == 2) {
+                        al_draw_bitmap(medallas[0], ((Steve.getX() + 55) + (0 * 80)), (Steve.getY() + 95), 0);
+                        al_draw_bitmap(medallas[1], ((Steve.getX() + 65) + (1 * 80)), (Steve.getY() + 95), 0);
+                    }
+                    else if (Steve.getMedal() == 3) {
+                        al_draw_bitmap(medallas[0], ((Steve.getX() + 55) + (0 * 80)), (Steve.getY()+95), 0);
+                        al_draw_bitmap(medallas[1], ((Steve.getX() + 65) + (1 * 80)), (Steve.getY()+95), 0);
+                        al_draw_bitmap(medallas[2], ((Steve.getX() + 80) + (2 * 80)), (Steve.getY()+95), 0);
                     }
                 }
             }

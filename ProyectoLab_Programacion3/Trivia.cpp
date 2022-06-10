@@ -115,7 +115,7 @@ int Trivia::politica(){
 				if (life > 0) {
 					al_draw_bitmap(win, 0, 0, 0);
 					Steve->setVida(life);
-					cout << Steve->getVida();
+					Steve->setMedal(1);
 					return 0;
 				}
 			}
@@ -123,7 +123,7 @@ int Trivia::politica(){
 		else {
 			al_draw_bitmap(lost, 0, 0, 0);
 			Steve->setVida(life);
-			cout << Steve->getVida();
+			Steve->setMedal(1);
 			return 0;
 		}
 
@@ -378,7 +378,7 @@ int Trivia::historia() {
 				if (life > 0) {
 					al_draw_bitmap(win, 0, 0, 0);
 					Steve->setVida(life);
-					cout << Steve->getVida();
+					Steve->setMedal(1);
 					return 0;
 				}
 			}
@@ -386,7 +386,7 @@ int Trivia::historia() {
 		else {
 			al_draw_bitmap(lost, 0, 0, 0);
 			Steve->setVida(life);
-			cout << Steve->getVida();
+			Steve->setMedal(1);
 			return 0;
 		}
 
@@ -501,7 +501,7 @@ int Trivia::ciencia() {
 				if (life > 0) {
 					al_draw_bitmap(win, 0, 0, 0);
 					Steve->setVida(life);
-					cout << Steve->getVida();
+					Steve->setMedal(1);
 					return 0;
 				}
 			}
@@ -509,7 +509,7 @@ int Trivia::ciencia() {
 		else {
 			al_draw_bitmap(lost, 0, 0, 0);
 			Steve->setVida(life);
-			cout << Steve->getVida();
+			Steve->setMedal(1);
 			return 0;
 		}
 
@@ -866,7 +866,7 @@ int Trivia::arte() {
 				if (life > 0) {
 					al_draw_bitmap(win, 0, 0, 0);
 					Steve->setVida(life);
-					cout << Steve->getVida();
+					Steve->setMedal(1);
 					return 0;
 				}
 			}
@@ -874,7 +874,7 @@ int Trivia::arte() {
 		else {
 			al_draw_bitmap(lost, 0, 0, 0);
 			Steve->setVida(life);
-			cout << Steve->getVida();
+			Steve->setMedal(1);
 			return 0;
 		}
 		al_flip_display();

@@ -15,6 +15,7 @@ private:
 	int vida = 0;
 	int width ;
 	int height;
+	int medallas = 0;
 	int dirX, dirY;
 	int speed;
 	bool Talkin;
@@ -33,10 +34,11 @@ public:
 	int getDialogNum();
 	int getX();
 	int getY();
+	int getMedal();
 	int getDirY();
 	int getSpeed();
 	int getTalkingPressed();
-	
+	void setMedal(int);
 	void setX(int);
 	void setTalking(bool);
 	void DrawMessageBox(int, int, const char*,ALLEGRO_FONT*);

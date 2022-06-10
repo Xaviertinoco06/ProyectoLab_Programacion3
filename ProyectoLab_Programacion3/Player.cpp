@@ -5,6 +5,7 @@ Player::Player() {
     dirX = 0;
     dirY = 0;
     vida = 8;
+    medallas = 0;
 }
 
 Player::~Player() {
@@ -16,6 +17,14 @@ int Player::getVida() {
 
 void Player::setVida(int _vida) {
     vida = _vida;
+}
+
+int Player::getMedal() {
+	return medallas;
+}
+
+void Player::setMedal(int _medal) {
+	medallas = _medal;
 }
 
 int Player::getTalkingPressed() {
@@ -100,6 +109,7 @@ Player::Player(ALLEGRO_BITMAP* _Sprite) {
     dirX = 0;
     dirY = 0;
     speed = 3;
+    medallas = 0;
     x = 0;
     y = 0;
     vida = 8;
