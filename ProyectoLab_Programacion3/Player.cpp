@@ -4,6 +4,7 @@
 Player::Player() {
     dirX = 0;
     dirY = 0;
+    vida = 8;
 }
 
 Player::~Player() {
@@ -13,7 +14,7 @@ int Player::getVida() {
 	return vida;
 }
 
-int Player::setVida(int _vida) {
+void Player::setVida(int _vida) {
     vida = _vida;
 }
 

@@ -153,7 +153,6 @@ int main(){
     al_register_event_source(queue, al_get_timer_event_source(timer));
     al_register_event_source(queue, al_get_mouse_event_source());
 
-
     //LOAD CHARACTER
     Player Steve(Character);
     Steve.setHeight(64);

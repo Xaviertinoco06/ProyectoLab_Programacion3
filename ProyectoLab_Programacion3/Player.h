@@ -27,7 +27,7 @@ private:
 public:
 	enum { DER, IZQ, ARR, ABJ };
 	int getVida();
-	int setVida(int);
+	void setVida(int);
 	int getWidth();
 	int getHeight();
 	int getDialogNum();

@@ -20,14 +20,10 @@ using std::string;
 class Trivia
 {
 private:
-
 	int xr = 0, yr = 0, spins = 0, tipoS = 0;
 	bool spinning = false, running = true;
-
-
-
 	int ancho = 1024, alto = 768, xo = 0, y = 0, aux = 1;
-	int resp = 0, xp = 0, mousex = 0, mousey = 0, vidas = 5, segundos = 0;
+	int resp = 0, xp = 0, mousex = 0, mousey = 0, segundos = 0;
 
 	ALLEGRO_FONT* font;
 	ALLEGRO_FONT* font2;
@@ -35,31 +31,20 @@ private:
 	ALLEGRO_TIMER* segundoTimer;
 	ALLEGRO_TIMER* fps;
 	ALLEGRO_EVENT_QUEUE* event_queue;
-
-
-
+	
 public:
 	void drawball(ALLEGRO_BITMAP*, int, int);
 	void dibujaroak(ALLEGRO_BITMAP*, int);
 	void texto(string, int, int, int);
 	void dibujaruleta(ALLEGRO_BITMAP*, int, int);
 	Trivia(ALLEGRO_DISPLAY*);
-
+	
 	int  Ruleta();
 	int ciencia();
 	int arte();
-
-
 	int historia();
 	int politica();
-
 	void reset();
-
-
-
-
-
-
 };
 
 
